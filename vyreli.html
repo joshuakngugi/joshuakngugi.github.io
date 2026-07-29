@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vyreli | Joshua K. Ngugi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .case-eyebrow .dot{background:#3E5C8A;}
+</style>
+</head>
+<body>
+
+<div class="gate-overlay" id="gate-overlay">
+  <div class="gate-box">
+    <div class="label" style="margin-bottom:14px;">Portfolio access</div>
+    <h2>This portfolio is private.</h2>
+    <p>Enter the password shared with you to continue.</p>
+    <div class="gate-error" id="gate-error">Incorrect password. Try again.</div>
+    <input type="password" id="gate-input" placeholder="Password" autocomplete="off">
+    <button onclick="checkGate()">Enter</button>
+  </div>
+</div>
+<script>
+(function(){
+  var GATE_PASS = "ReviewPortfolio2026";
+  var overlay = document.getElementById('gate-overlay');
+  if (sessionStorage.getItem('portfolioUnlocked') === 'true') {
+    overlay.style.display = 'none';
+  } else {
+    document.body.classList.add('gated');
+  }
+  window.checkGate = function(){
+    var val = document.getElementById('gate-input').value;
+    if (val === GATE_PASS) {
+      sessionStorage.setItem('portfolioUnlocked','true');
+      overlay.style.display = 'none';
+      document.body.classList.remove('gated');
+    } else {
+      document.getElementById('gate-error').classList.add('show');
+    }
+  };
+  document.getElementById('gate-input').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') checkGate();
+  });
+})();
+</script>
+
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-name">Joshua K. Ngugi</div>
+    <nav class="nav-links">
+      <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a href="https://www.linkedin.com/in/joshuakngugi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:joshuakngugi@gmail.com">Email</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap back-link"><a href="index.html">← All work</a></div>
+
+<section class="case">
+  <div class="wrap">
+    <div class="case-eyebrow"><span class="dot"></span><span class="label">Vyreli · Fintech · iOS</span></div>
+    <h2>A wallet-first payment model that removed the wait from getting paid.</h2>
+
+    <div class="meta-row">
+      <div class="item"><div class="label">Role</div><div class="v">End-to-end design: flow, IA, UI</div></div>
+      <div class="item"><div class="label">Team</div><div class="v">Solo design, with stakeholder input</div></div>
+      <div class="item"><div class="label">Focus</div><div class="v">Wallet funding &amp; checkout</div></div>
+    </div>
+
+    <div class="hero-visual vyreli">
+      <div class="device-ios tilt-left"><div class="notch"></div><div class="screen"><img src="images/vyreli-welcome.png" alt="Vyreli welcome screen"></div></div>
+      <div class="device-ios tilt-right"><div class="notch"></div><div class="screen"><img src="images/vyreli-addfunds.png" alt="Vyreli Add Funds screen"></div></div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">Problem</div>
+        <h3>Paying wellness centers meant waiting on the banks.</h3>
+        <p>Before Vyreli, paying a wellness center relied on traditional rails: cards, checks, direct transfers, all with processing delays baked in. Standard bank transfers typically take one to three business days to settle, and a first-time linked account can take three to five. For clinics, that meant getting paid days after service was delivered. For users, it meant genuine uncertainty about whether a payment had actually gone through.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">The shift</div>
+        <h3>Move the transfer out of the critical path entirely.</h3>
+        <p>The fix wasn't making one transfer faster. It was removing the transfer from the moment of payment altogether. If money was already sitting in a user's wallet before they needed it, checkout could be instant regardless of how slow the underlying banking rails were.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">Approach</div>
+        <div class="decisions">
+          <div class="decision">
+            <h4>Instant rails as the default</h4>
+            <p>FedNow and RTP surfaced as the recommended path for funding a wallet, both settling in seconds at no fee, with traditional bank transfer kept available for users without access to instant rails.</p>
+          </div>
+          <div class="decision">
+            <h4>Fund once, pay instantly</h4>
+            <p>Once funds are in the wallet, paying a wellness center at checkout draws from that balance immediately, with no waiting on bank processing at the point of sale.</p>
+          </div>
+          <div class="decision">
+            <h4>Clarity over choice paralysis</h4>
+            <p>A simple mode / duration / fee table makes the speed-versus-familiarity tradeoff obvious at a glance, instead of something users have to dig for.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="frame-row">
+        <div class="frame-item">
+          <div class="device-ios"><div class="notch"></div><div class="screen"><img src="images/vyreli-createaccount.png" alt="Vyreli create account screen"></div></div>
+          <div class="frame-cap">Account creation: email or SSO, kept lightweight to reduce drop-off before value is shown.</div>
+        </div>
+        <div class="frame-item">
+          <div class="device-ios"><div class="notch"></div><div class="screen"><img src="images/vyreli-addfunds.png" alt="Vyreli Add Funds screen"></div></div>
+          <div class="frame-cap">Add Funds: instant rails recommended by default, fee and duration shown up front.</div>
+        </div>
+        <div class="frame-item">
+          <div class="device-ios"><div class="notch"></div><div class="screen"><img src="images/vyreli-bankmodal.png" alt="Vyreli link bank account modal"></div></div>
+          <div class="frame-cap">Linking a bank account: framed as a guided, secure step rather than a form.</div>
+        </div>
+        <div class="frame-item">
+          <div class="device-ios"><div class="notch"></div><div class="screen"><img src="images/vyreli-confirm.png" alt="Vyreli confirmation details screen"></div></div>
+          <div class="frame-cap">Confirmation: subtotal, fee, and total shown separately before committing funds.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">Designing for a regulated wallet</div>
+        <h3>Speed still had to feel accountable.</h3>
+        <p>Because Vyreli operates as a registered money services business with a bank partner behind the wallet, the interface couldn't just optimize for speed. It had to keep the relationship between a user's money and its source legible at every step. That shaped small but deliberate choices: always naming the linked bank explicitly at confirmation rather than hiding it behind a generic "your wallet," separating the service fee from the transfer amount instead of folding it into one number, and never letting the "Recommended" instant option imply the slower option was somehow less safe. Fast and trustworthy needed to read as the same thing, not a tradeoff the user had to reconcile themselves.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">Further consideration</div>
+        <h3>Where this goes next.</h3>
+      </div>
+      <div class="reflect-grid">
+        <div class="reflect-item">
+          <h4>Payouts, not just funding</h4>
+          <p>The same instant-rail logic could extend to how wellness centers pull earnings out of the platform, closing the loop on both sides of the transaction.</p>
+        </div>
+        <div class="reflect-item">
+          <h4>Proactive balance nudges</h4>
+          <p>Light, optional prompts to top up before a scheduled visit, so funding never becomes a blocker at the point of care.</p>
+        </div>
+        <div class="reflect-item">
+          <h4>Transparent risk signals</h4>
+          <p>Surfacing simple, plain-language status on any hold or review a transfer is under, rather than a silent delay a user has to guess at.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">Reflection</div>
+        <h3>What this project taught me.</h3>
+        <p>The hardest part wasn't the payment logic. It was resisting the urge to make "instant" the only story on the screen. Wellness purchases carry real financial and health-adjacent weight for people, so the design needed to earn trust before it earned speed. That meant being explicit where a purely optimized flow would have been quieter: naming the bank, separating the fee, showing the trade-off plainly instead of nudging users toward the fastest path. Designing for a regulated product taught me that clarity is itself a safety feature, not just a usability one.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">Outcome</div>
+        <h3>Getting paid stopped being something you wait for.</h3>
+        <p>Wellness centers get paid at the point of sale instead of days later, and users get a payment experience that feels immediate, with rewards layered on top to keep them funding and returning.</p>
+      </div>
+    </div>
+
+    <a class="next-case" href="yasil.html">
+      <div>
+        <div class="label">Next case study</div>
+        <div class="next-case-title">Yasil Corporate</div>
+      </div>
+      <div class="next-case-go">View →</div>
+    </a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <div class="label">Get in touch</div>
+        <h3>Let's talk about what you're building.</h3>
+      </div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/joshuakngugi/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:joshuakngugi@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 Joshua K. Ngugi.</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox"><img id="lightbox-img" src="" alt=""></div>
+<script>
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.frame-item img').forEach(function(img){
+    img.addEventListener('click', function(){
+      lbImg.src = img.src;
+      lb.classList.add('active');
+    });
+  });
+  lb.addEventListener('click', function(){ lb.classList.remove('active'); lbImg.src=''; });
+</script>
+
+</body>
+</html>
