@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServEngine | Joshua K. Ngugi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .case-eyebrow .dot{background:#2F6F62;}
+</style>
+</head>
+<body>
+
+
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-name">Joshua K. Ngugi</div>
+    <nav class="nav-links">
+      <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a href="https://www.linkedin.com/in/joshuakngugi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:joshuakngugi@gmail.com">Email</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap back-link"><a href="index.html">← All work</a></div>
+
+<section class="case">
+  <div class="wrap">
+    <div class="case-eyebrow"><span class="dot"></span><span class="label">ServEngine · Facilities SaaS · Web</span></div>
+    <h2>Replacing WhatsApp with an audit trail for every proposal.</h2>
+
+    <div class="meta-row">
+      <div class="item"><div class="label">Role</div><div class="v">Senior designer, proposal module</div></div>
+      <div class="item"><div class="label">Team</div><div class="v">Design team, under lead UX designer</div></div>
+      <div class="item"><div class="label">Status</div><div class="v">Shipped</div></div>
+    </div>
+
+    <div class="hero-visual servengine">
+      <div class="device-browser">
+        <div class="toolbar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="urlbar">app.servengine.io/work-orders/wo-130479</span></div>
+        <div class="screen"><img src="images/se-aichat.png" alt="ServEngine AI Proposal Generator"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">Problem</div>
+        <h3>Proposals were negotiated over email, and WhatsApp.</h3>
+        <p>Work order proposals were sent manually via email, with the real back-and-forth happening informally over WhatsApp. That's a structural risk, not just an inconvenience: WhatsApp offers no audit trail, no access log, and no recoverable record. Conversations can be deleted at will, and when someone leaves the company, the conversation history leaves with them. For a workflow where pricing gets negotiated and scope gets revised, that meant no reliable record of what was actually agreed to, and things slipped through the cracks.</p>
+      </div>
+      <div class="frame-row browsers">
+        <div class="frame-item browser-item">
+          <div class="device-browser">
+            <div class="toolbar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="urlbar">app.servengine.io/work-orders/wo-130479</span></div>
+            <div class="screen"><img src="images/se-empty.png" alt="ServEngine work order with no proposal created yet"></div>
+          </div>
+          <div class="frame-cap">Starting point: a work order with no proposal, and no record of how one gets made.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">Approach</div>
+        <div class="decisions">
+          <div class="decision">
+            <h4>Status lifecycle as the backbone</h4>
+            <p>Every proposal moves through a defined path: draft, internal approval, client approval, approved or rejected, with revision loops at each stage, and every edit or status change generates a new version. The audit trail builds itself.</p>
+          </div>
+          <div class="decision">
+            <h4>An AI assistant, not a black box</h4>
+            <p>Requested directly by stakeholders: staff shouldn't need Word or Excel formatting skills to produce a clean proposal, and should have an assistant that catches what they might miss. Built as a conversational panel beside a live document preview, so every AI edit is visible and reversible in context, never a silent rewrite.</p>
+          </div>
+          <div class="decision">
+            <h4>Deliberate, not automatic, transitions</h4>
+            <p>The system never guesses that a proposal was sent or that a client responded; the user marks each transition explicitly. A considered tradeoff, to keep the audit trail intentional and accountable rather than inferred.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="frame-row browsers">
+        <div class="frame-item browser-item">
+          <div class="device-browser">
+            <div class="toolbar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="urlbar">app.servengine.io/work-orders/wo-130479</span></div>
+            <div class="screen"><img src="images/se-prewritten.png" alt="ServEngine pre-written proposal draft modal"></div>
+          </div>
+          <div class="frame-cap">Starting a proposal: paste a draft or hand off to AI generation, without formatting overhead.</div>
+        </div>
+        <div class="frame-item browser-item">
+          <div class="device-browser">
+            <div class="toolbar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="urlbar">app.servengine.io/proposals/001/generate</span></div>
+            <div class="screen"><img src="images/se-aichat.png" alt="ServEngine AI Proposal Generator chat"></div>
+          </div>
+          <div class="frame-cap">AI Proposal Generator: conversational edits update the live document beside the chat, in view the whole time.</div>
+        </div>
+      </div>
+      <div class="frame-row browsers">
+        <div class="frame-item browser-item">
+          <div class="device-browser">
+            <div class="toolbar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="urlbar">app.servengine.io/proposals/001/comments</span></div>
+            <div class="screen"><img src="images/se-comments.png" alt="ServEngine proposal comments and action menu"></div>
+          </div>
+          <div class="frame-cap">Comments and status actions live together, so feedback and approval never split across tools.</div>
+        </div>
+        <div class="frame-item browser-item">
+          <div class="device-browser">
+            <div class="toolbar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="urlbar">app.servengine.io/proposals/001/submit</span></div>
+            <div class="screen"><img src="images/se-draftemail.png" alt="ServEngine draft email and submit modal"></div>
+          </div>
+          <div class="frame-cap">Draft email &amp; submit: the client-facing send is deliberate and reviewable, never silent.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">The audit trail in practice</div>
+        <h3>Every version, every author, every decision, in one place.</h3>
+        <p>As a proposal moves through internal revisions, client feedback, and rejections, each version is preserved with who changed what and when. This replaces what used to be scattered across inboxes and phones.</p>
+      </div>
+      <div class="frame-row browsers">
+        <div class="frame-item browser-item">
+          <div class="device-browser">
+            <div class="toolbar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="urlbar">app.servengine.io/proposals/001/v2</span></div>
+            <div class="screen"><img src="images/se-detail.png" alt="ServEngine proposal awaiting internal approval with version history"></div>
+          </div>
+          <div class="frame-cap">Awaiting internal approval: V2, with the full version log alongside the document.</div>
+        </div>
+        <div class="frame-item browser-item">
+          <div class="device-browser">
+            <div class="toolbar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="urlbar">app.servengine.io/proposals/001/v2</span></div>
+            <div class="screen"><img src="images/se-revisions.png" alt="ServEngine proposal with internal revisions requested"></div>
+          </div>
+          <div class="frame-cap">Internal revisions requested: the specific ask and every resulting change, both logged.</div>
+        </div>
+      </div>
+      <div class="frame-row browsers">
+        <div class="frame-item browser-item">
+          <div class="device-browser">
+            <div class="toolbar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="urlbar">app.servengine.io/proposals/001/v4</span></div>
+            <div class="screen"><img src="images/se-rejected.png" alt="ServEngine proposal rejected by client with full version history"></div>
+          </div>
+          <div class="frame-cap">Rejected by client: even a rejection keeps its full V1-V4 history intact, not erased.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">Working within a shared design system</div>
+        <h3>Depth without disrupting the rest of the platform.</h3>
+        <p>The proposal module doesn't exist in isolation. It sits inside the broader ServEngine work order system, alongside Visits, Expenses, Internal Notes, and Documents, all built by the wider design team under a shared lead. Part of the job was making the proposal lifecycle feel deep and considered on its own, while staying visually and behaviorally consistent with tabs and patterns other designers were shipping in parallel: the same status-pill language, the same three-dot menu conventions, the same version-history pattern that other modules could eventually reuse. As a senior designer delegating pieces of this work to others on the team, a lot of the effort went into documenting these conventions clearly enough that they'd hold up across contributors, not just in my own screens.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">Further consideration</div>
+        <h3>Where this goes next.</h3>
+      </div>
+      <div class="reflect-grid">
+        <div class="reflect-item">
+          <h4>Learning from past proposals</h4>
+          <p>Surfacing pricing and scope patterns from previously approved proposals as suggestions inside the AI Generator, rather than starting each one cold.</p>
+        </div>
+        <div class="reflect-item">
+          <h4>Client-side visibility</h4>
+          <p>A read-only client view of the version history, so approvals don't require trusting a summary; the client can see exactly what changed.</p>
+        </div>
+        <div class="reflect-item">
+          <h4>Field-level permissions</h4>
+          <p>Extending the granular permission work already underway so different roles see and edit only the parts of a proposal relevant to them.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">Reflection</div>
+        <h3>What this project taught me.</h3>
+        <p>The instinct with an AI-assisted editor is to make it feel magical: invisible, one-click, done. What I learned building this is that for a document with financial and legal weight, invisible is the wrong goal. People needed to trust every change the assistant made, which meant the interface had to slow down just enough to show its work: the chat log, the diff-like version history, the explicit "what changed" summary after every edit. Designing restraint into an AI feature, making sure it explains itself rather than just acting, turned out to be the actual design problem, not the AI capability itself.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <div class="label">Outcome</div>
+        <h3>One record, from conception to client approval.</h3>
+        <p>Shipped and in use. The win wasn't primarily about saved time, it was replacing scattered email threads and disappearing WhatsApp conversations with a single, complete, authoritative trail of everything that happened to a proposal.</p>
+      </div>
+    </div>
+
+    <a class="next-case" href="vyreli.html">
+      <div>
+        <div class="label">Back to the start</div>
+        <div class="next-case-title">Vyreli</div>
+      </div>
+      <div class="next-case-go">View →</div>
+    </a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <div class="label">Get in touch</div>
+        <h3>Let's talk about what you're building.</h3>
+      </div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/joshuakngugi/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:joshuakngugi@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 Joshua K. Ngugi.</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox"><img id="lightbox-img" src="" alt=""></div>
+<script>
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.frame-item img').forEach(function(img){
+    img.addEventListener('click', function(){
+      lbImg.src = img.src;
+      lb.classList.add('active');
+    });
+  });
+  lb.addEventListener('click', function(){ lb.classList.remove('active'); lbImg.src=''; });
+</script>
+
+</body>
+</html>
